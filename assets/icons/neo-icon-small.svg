@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- small-size master (16/32): tile fills more, wider gap, simpler chevron -->
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="#EDE6DA"/>
+  <rect x="80" y="80" width="864" height="864" rx="186" fill="none" stroke="#C9BBA6" stroke-width="32"/>
+  <path d="M272 320 L448 512 L272 704" fill="none" stroke="#2B2522" stroke-width="128" stroke-linecap="square" stroke-linejoin="miter"/>
+  <rect x="592" y="400" width="176" height="304" fill="#D97757"/>
+</svg>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>neo 版本记录</title>
+  <meta name="description" content="neo 已发布版本的记录。当前版本是 v0.4.99。">
+  <link rel="canonical" href="https://neo.ani-intelligence.com/changelog/">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/icons/32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/icons/icon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/icons/favicon.svg" width="28" height="28" alt="">
+        <span class="brand-name">neo</span>
+      </a>
+      <nav class="nav" aria-label="站点">
+        <a href="/">首页</a>
+        <a href="/install/">安装</a>
+        <a href="/changelog/" aria-current="page">版本记录</a>
+        <a href="/family/">家族</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="wrap-narrow">
+      <p class="kicker">版本记录</p>
+      <h1>版本记录</h1>
+      <p class="lead">这里记录已经发布的版本。当前版本是 <span data-neo-version>v0.4.99</span>。更完整的说明在源码仓库的 <a href="https://github.com/AndersHsueh/neo-cli/tree/v0.4.99/docs/release-notes">docs/release-notes/</a>，本页只摘已核对过的条目，不把尚未发版的改动写成当前能力。</p>
+
+      <h2>v0.4.99 <span class="meta">当前版本 · 2026-11-22（Asia/Shanghai）</span></h2>
+      <p>发布说明标题是「会话工作树、运行中转向与一批交互增强」。完整条目见仓库中的 <a href="https://github.com/AndersHsueh/neo-cli/blob/v0.4.99/docs/release-notes/v0.4.99.md">docs/release-notes/v0.4.99.md</a>。说明里记录的条目包括：</p>
+      <ul class="plain-list">
+        <li>子代理工具排除表（#84）</li>
+        <li>交互式 transcript 视图（#90）</li>
+        <li>初次使用配置向导（#88）</li>
+        <li>子代理生命周期 hook（#86）</li>
+        <li><code>--safe-mode</code> 以干净配置启动（#70）</li>
+        <li><code>/doctor</code> 配置体检（#91）</li>
+        <li>按需加载嵌套规则文件（#54）</li>
+        <li><code>/output-style</code>（#73）</li>
+        <li>自定义命名子代理（#36）</li>
+        <li>MCP 资源与提示词（#67）</li>
+        <li>事件驱动监视（#87）</li>
+        <li>会话 fork（#65）</li>
+        <li>运行中转向（#66）</li>
+        <li><code>--add-dir</code> / <code>/add-dir</code>（#63）</li>
+        <li>会话 worktree（#85）</li>
+      </ul>
+      <p>此后，<a href="https://github.com/AndersHsueh/neo-cli/issues/57">#57</a> 已合入主分支，尚未发版。</p>
+
+      <h2>近期版本</h2>
+      <p>日期均取自各版本发布说明（Asia/Shanghai）。标题或摘要也来自这些说明，未另写。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>版本</th>
+              <th>日期</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>v0.4.99</td><td>2026-11-22</td><td>会话工作树、运行中转向与一批交互增强（当前版本）</td></tr>
+            <tr><td>v0.4.98</td><td>2026-11-19</td><td>会话默认名改为顺序编号 Neo#N</td></tr>
+            <tr><td>v0.4.97</td><td>2026-11-19</td><td>启动 Banner 圆角框线卡片</td></tr>
+            <tr><td>v0.4.96</td><td>2026-11-19</td><td><code>-p --json-schema</code> 结构化输出</td></tr>
+            <tr><td>v0.4.95</td><td>2026-11-19</td><td>实验性 Code Mode（<code>run_js</code>）</td></tr>
+            <tr><td>v0.4.94</td><td>2026-11-19</td><td>交互 <code>/cd</code> 切换会话工作目录</td></tr>
+            <tr><td>v0.4.93</td><td>2026-11-19</td><td>MCP 工具按需发现与窗口算法委托 pinned core</td></tr>
+            <tr><td>v0.4.92</td><td>2026-11-19</td><td>主会话生命周期 hooks 与语义载荷分离</td></tr>
+            <tr><td>v0.4.91</td><td>2026-11-19</td><td>ACP、输入框编辑与轮末 wiki 维护</td></tr>
+            <tr><td>v0.4.90</td><td>2026-11-17</td><td>格式与注释整理，无行为变更</td></tr>
+            <tr><td>v0.4.89</td><td>2026-11-16</td><td>跟进修复（会话袋状态、输入历史上限等）</td></tr>
+            <tr><td>v0.4.88</td><td>2026-11-16</td><td>拆分残留清理</td></tr>
+            <tr><td>v0.4.87</td><td>2026-11-16</td><td>拆分超长源文件，无行为变化</td></tr>
+            <tr><td>v0.4.86</td><td>2026-11-15</td><td>含 Ctrl+G 外部编辑器等（#62、#56、#61）</td></tr>
+            <tr><td>v0.4.85</td><td>2026-11-14</td><td>含 stream-json、模型备用链等（#37、#59、#52、#39）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>更早的标签与说明在同一目录的发布说明里，本页不逐条抄录。</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="inner">
+      <p>源码在 GitHub：<a href="https://github.com/AndersHsueh/neo-cli">AndersHsueh/<span class="nowrap">neo-cli</span></a>。许可：木兰宽松许可证，第 2 版。当前已发布版本 <span data-neo-version>v0.4.99</span>。</p>
+      <p class="reserved">andershsueh.ani-intelligence.com 与 2shou.ani-intelligence.com 为预留域名，内容尚未上线。</p>
+    </div>
+  </footer>
+  <script src="/assets/js/version.js"></script>
+</body>
+</html>

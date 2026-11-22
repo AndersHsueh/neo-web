@@ -1,0 +1,596 @@
+/* neo 官方门户
+   令牌取自 neo-agent-app 暖纸界面（origin/main，已批准的家族语言）。
+   这是阅读站，不是产品 App 壳：更大留白，不用工作台控件，几乎不用阴影与渐变。 */
+
+:root {
+  --void: #f3eee6;
+  --surface-0: #efe8dc;
+  --surface-1: #f7f3ec;
+  --surface-2: #fbf8f3;
+  --surface-3: #e7dfd2;
+  --line-0: rgba(43, 37, 34, 0.06);
+  --line-1: rgba(43, 37, 34, 0.1);
+  --line-2: rgba(43, 37, 34, 0.16);
+  --line-3: rgba(43, 37, 34, 0.28);
+  --ink-1: #2b2522;
+  --ink-2: #4a433c;
+  --ink-3: #5c534c;
+  --ink-4: #655c54;
+  --accent: #a24a32;
+  --accent-hover: #8e4030;
+  --accent-press: #743322;
+  --accent-wash: rgba(162, 74, 50, 0.1);
+  --accent-line: rgba(142, 64, 48, 0.45);
+  --on-accent: #fbf7f1;
+  --ok: #2f6b45;
+  --ok-wash: rgba(47, 107, 69, 0.12);
+  --warn: #8f5a22;
+  --warn-wash: rgba(143, 90, 34, 0.12);
+  --code-bg: #f6f0e6;
+  --code-ink: #3f3833;
+
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC",
+    "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --lh: 1.66;
+  --measure: 40rem;
+  --measure-wide: 52rem;
+  --page: 72rem;
+  --r: 10px;
+  --d2: 180ms;
+  --ease-out: cubic-bezier(0.2, 0.75, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light only;
+  background: var(--void);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--ink-1);
+  background: var(--void);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: var(--lh);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.4rem 0.7rem;
+  background: var(--surface-2);
+  color: var(--ink-1);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.wrap {
+  width: min(var(--page), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.wrap-narrow {
+  width: min(var(--measure), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.wrap-wide {
+  width: min(var(--measure-wide), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+/* ---- header ---------------------------------------------------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line-1);
+}
+
+.site-header .inner {
+  width: min(var(--page), calc(100% - 3rem));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--ink-1);
+  text-decoration: none;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  border-radius: 7px;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.15rem;
+}
+
+.nav a {
+  color: var(--ink-3);
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--ink-1);
+  background: var(--surface-0);
+}
+
+.nav a[aria-current="page"] {
+  color: var(--ink-1);
+  background: var(--surface-0);
+}
+
+/* ---- main typography ------------------------------------------- */
+
+main {
+  flex: 1;
+  padding: 3.25rem 0 4.5rem;
+}
+
+.hero {
+  width: min(var(--measure), calc(100% - 3rem));
+  margin-inline: auto;
+}
+
+.kicker {
+  margin: 0 0 0.85rem;
+  color: var(--ink-4);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ink-1);
+}
+
+h1 {
+  margin: 0 0 1.35rem;
+  font-size: clamp(2.15rem, 4vw, 2.85rem);
+}
+
+h2 {
+  margin: 2.6rem 0 0.85rem;
+  font-size: 1.45rem;
+}
+
+h3 {
+  margin: 1.6rem 0 0.5rem;
+  font-size: 1.12rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--ink-2);
+}
+
+.lead {
+  font-size: 1.12rem;
+  color: var(--ink-1);
+}
+
+.en {
+  color: var(--ink-3);
+  font-size: 0.98rem;
+  margin-bottom: 1.15rem;
+}
+
+.en + .en {
+  margin-top: -0.35rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+hr,
+.rule {
+  border: 0;
+  border-top: 1px solid var(--line-1);
+  margin: 2.4rem 0;
+}
+
+/* ---- actions / notes / lists ----------------------------------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 0.9rem;
+  margin: 1.75rem 0 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.05rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.98rem;
+  line-height: 1.3;
+  transition: background var(--d2) var(--ease-out), color var(--d2) var(--ease-out),
+    border-color var(--d2) var(--ease-out);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--on-accent);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink-1);
+  border: 1px solid var(--line-3);
+}
+
+.btn-secondary:hover {
+  border-color: var(--ink-2);
+  color: var(--ink-1);
+  background: var(--surface-1);
+}
+
+.note {
+  margin: 1.4rem 0 0;
+  padding: 0.95rem 1.05rem;
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r);
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.plain-list {
+  margin: 0 0 1.1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.plain-list li {
+  position: relative;
+  padding: 0.45rem 0 0.45rem 1.15rem;
+  color: var(--ink-2);
+  border-top: 1px solid var(--line-0);
+}
+
+.plain-list li:first-child {
+  border-top: 0;
+}
+
+.plain-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95em;
+  width: 0.4rem;
+  height: 1px;
+  background: var(--line-3);
+}
+
+ol.steps {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+ol.steps > li {
+  counter-increment: step;
+  margin: 0 0 1.35rem;
+  padding-left: 2.2rem;
+  position: relative;
+}
+
+ol.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-3);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+ol.steps h3 {
+  margin: 0 0 0.35rem;
+}
+
+/* ---- code ------------------------------------------------------ */
+
+pre,
+code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+
+code {
+  color: var(--code-ink);
+  background: var(--code-bg);
+  padding: 0.08em 0.32em;
+  border-radius: 4px;
+  border: 1px solid var(--line-0);
+}
+
+pre {
+  margin: 0.7rem 0 0.2rem;
+  padding: 0.95rem 1.05rem;
+  background: var(--code-bg);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r);
+  color: var(--code-ink);
+  overflow-x: auto;
+  line-height: 1.5;
+  -webkit-overflow-scrolling: touch;
+}
+
+pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ---- tables / family columns ----------------------------------- */
+
+.table-wrap {
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--line-1);
+  border-radius: var(--r);
+  background: var(--surface-1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--line-1);
+  color: var(--ink-2);
+}
+
+th {
+  font-weight: 600;
+  color: var(--ink-1);
+  background: var(--surface-0);
+  font-size: 0.82rem;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: 0;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.col {
+  background: var(--surface-1);
+  border: 1px solid var(--line-1);
+  border-radius: 14px;
+  padding: 1.2rem 1.25rem 1.3rem;
+}
+
+.col h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.25rem;
+}
+
+.col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.col li {
+  margin: 0;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--line-1);
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.col li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.col li strong {
+  display: block;
+  color: var(--ink-1);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  font-size: 0.98rem;
+}
+
+.now-label,
+.not-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  margin-bottom: 0.55rem;
+}
+
+.now-label {
+  color: var(--ok);
+  background: var(--ok-wash);
+}
+
+.not-label {
+  color: var(--warn);
+  background: var(--warn-wash);
+}
+
+.reserved {
+  margin-top: 0.4rem;
+  color: var(--ink-3);
+  font-size: 0.95rem;
+}
+
+.meta {
+  color: var(--ink-4);
+  font-size: 0.92rem;
+}
+
+/* ---- footer ---------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--line-1);
+  padding: 1.6rem 0 2rem;
+  color: var(--ink-4);
+  font-size: 0.88rem;
+}
+
+.site-footer .inner {
+  width: min(var(--page), calc(100% - 3rem));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.site-footer a {
+  color: var(--ink-3);
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .wrap,
+  .wrap-narrow,
+  .wrap-wide,
+  .hero,
+  .site-header .inner,
+  .site-footer .inner {
+    width: calc(100% - 2rem);
+  }
+
+  main {
+    padding: 2.25rem 0 3rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
